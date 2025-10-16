@@ -4,6 +4,7 @@
 }
 
 :root {
+  /* Colors */
   --color-bg: #ffffff;
   --color-text: #222222;
   --color-muted: #6b7280;
@@ -11,7 +12,17 @@
   --color-sub-surface: #f7f7f8;
   --color-border: #e5e7eb;
   --color-accent: #2563eb;
+
+  /* Sizes */
+  --sidebar-width: 250px;
+  --sidebar-width-lg: 300px;
+  --nav-height: 55px;
+  --spacing: 16px;
+  --border-radius: 8px;
+  --font-size-base: 15px;
+  --font-size-h1: 28px;
 }
+
 
 body {
   min-height: 100vh;
@@ -62,7 +73,6 @@ nav button {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 999px;
-  /* circular */
   color: var(--color-text);
 }
 
@@ -245,7 +255,9 @@ footer {
   grid-area: footer;
 }
 
-@media(max-width: 800px) {
+/* Media Queries for responsive */
+
+@media(max-width: 1000px) {
   body {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;

@@ -1,0 +1,240 @@
+:root {
+  --color-primary: #008260;
+  --color-primary-hover: #006a4e;
+  --color-background: #f9f9f9;
+  --color-border: #ccc;
+  --color-text: #333;
+  --color-text-light: #fff;
+  --font-size-h1: 28px;
+  --font-size-h2: 20px;
+  --font-size-input: 14px;
+  --border-radius: 10px;
+  --spacing: 16px;
+  --spacing-sm: 8px;
+  --input-height: 38px;
+}
+
+main {
+  padding: var(--spacing);
+}
+
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Header with back arrow and title on same line */
+.form-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing);
+}
+
+.form-header h1 {
+  margin: 0;
+  font-size: 32px;
+  color: var(--color-primary);
+  flex: 1;
+  text-align: center;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 32px;
+}
+
+.back-btn i {
+  display: block;
+}
+
+/* Single box for all inputs */
+.form-box {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: calc(var(--spacing) + 5px);
+  background-color: var(--color-background);
+}
+
+.form-box h2 {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-h2);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--spacing-sm);
+}
+
+/* Form groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--spacing);
+}
+
+/* Row for side-by-side inputs */
+.form-group.row {
+  display: flex;
+  gap: var(--spacing);
+  flex-wrap: wrap;
+}
+
+.form-group.row .col {
+  flex: 1 1 45%; /* paired inputs roughly 50% width */
+  min-width: 200px;
+}
+
+/* Full width inputs */
+.form-group.full-width {
+  flex: 1 1 100%;
+}
+
+/* Labels */
+.form-group label {
+  margin-bottom: var(--spacing-sm);
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+/* Inputs */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  font-size: var(--font-size-input);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Checkbox alignment */
+.form-group.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing);
+}
+
+.form-group.checkbox-group label {
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+/* Checkbox options (Yes / No) */
+.checkbox-options {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.checkbox-options label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing);
+}
+
+.submit-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+.submit-btn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.cancel-btn {
+  background-color: #d9534f;
+  color: var(--color-text-light);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.cancel-btn:hover {
+  background-color: #c9302c;
+}
+
+/* Radio buttons */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--spacing);
+}
+
+.radio-options {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.radio-options label {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  gap: 5px;
+}
+
+/* Responsive */
+
+/* Medium devices: keep paired inputs side by side */
+@media (max-width: 991px) and (min-width: 768px) {
+  .form-group.row .col {
+    flex: 1 1 48%;
+  }
+}
+
+/* Small devices: stack everything vertically */
+@media (max-width: 767px) {
+  .form-group.row {
+    flex-direction: column;
+  }
+
+  .form-group.row .col {
+    flex: 1 1 100%;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .form-header i {
+    font-size: 26px;
+  }
+
+  .form-header h1 {
+    text-align: center;
+    font-size: 26px;
+  }
+
+  .form-group.checkbox-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

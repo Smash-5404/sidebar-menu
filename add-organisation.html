@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="assets/icons/boxicons.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/css/add-organisation.css">
+</head>
+
+<body>
+  <nav>
+    <div class="nav-left">
+      <button class="hamburger" aria-label="Open menu" onclick="toggleSidebar()">
+        <i class='bx bx-menu'></i>
+      </button>
+      <img class="brand-logo" src="assets/images/ntsbook logo.jpg" alt="Brand Logo">
+      <span class="brand-name">NTSBook</span>
+    </div>
+    <div class="nav-right">
+      <button class="profile" aria-haspopup="true" aria-expanded="false" onclick="toggleProfileDropdown(event)">
+        <img class="avatar" src="assets/images/ntsbook logo.jpg" alt="Profile">
+      </button>
+      <div class="profile-dropdown" role="menu">
+        <a href="#" role="menuitem">Change password</a>
+        <a href="#" role="menuitem">Settings</a>
+        <a href="#" role="menuitem">Logout</a>
+      </div>
+    </div>
+  </nav>
+  <aside id="sidebar">
+    <button class="close-sidebar" aria-label="Close menu" onclick="closeSidebar()"><i class='bx bx-x'></i></button>
+    <div class="sidebar-header">
+      <img class="brand-logo" src="assets/images/ntsbook logo.jpg" alt="Brand Logo">
+      <span class="brand-name">NTSBook</span>
+    </div>
+    <ul class="menu">
+      <li><a href="dashboard.html"><i class='bxr  bx-grid'></i><span>Dashboard</span></a></li>
+
+      <li class="has-submenu">
+        <button class="submenu-toggle" aria-expanded="false">
+          <i class='bxr  bx-education'></i><span>Master</span>
+          <i class='bx bx-chevron-right caret'></i>
+        </button>
+        <ul class="submenu">
+          <li><a href="master-organisation.html">Organisation</a></li>
+          <li><a href="master-branch.html"> Branch</a></li>
+          <li><a href="master-location.html">Location</a></li>
+        </ul>
+      </li>
+
+      <li class="has-submenu">
+        <button class="submenu-toggle" aria-expanded="false">
+          <i class='bxr  bx-group'></i><span>Client</span>
+          <i class='bx bx-chevron-right caret'></i>
+        </button>
+        <ul class="submenu">
+          <li><a href="client-customer.html">Customer</a></li>
+          <li><a href="client-supplier.html">Supplier</a></li>
+        </ul>
+      </li>
+
+      <li><a href="inventory.html"><i class='bx bx-cube'></i><span>Inventory</span></a></li>
+      <li><a href="estimation.html"><i class='bx bx-calculator'></i><span>Estimation</span></a></li>
+      <li><a href="day-books.html"><i class='bx bx-book'></i><span>Day Books</span></a></li>
+      <li><a href="delivery.html"><i class='bx bx-truck'></i><span>Delivery</span></a></li>
+      <li><a href="invoice.html"><i class='bx bx-receipt'></i><span>Invoice</span></a></li>
+      <li><a href="returns.html"><i class='bx bx-undo'></i><span>Returns</span></a></li>
+      <li><a href="reports.html"><i class='bxr  bx-alert-triangle'></i><span>Reports</span></a></li>
+      <li><a href="online-store.html"><i class='bx bx-shopping-bag'></i><span>Online Store</span></a></li>
+
+      <li class="has-submenu">
+        <button class="submenu-toggle" aria-expanded="false">
+          <i class='bx bx-store'></i><span>Milk Shop</span>
+          <i class='bx bx-chevron-right caret'></i>
+        </button>
+        <ul class="submenu">
+          <li><a href="milk-shop-dairyshop.html">Dairy Shop</a></li>
+          <li><a href="milk-shop-dairylist.html">Dairy List</a></li>
+        </ul>
+      </li>
+
+      <li class="has-submenu">
+        <button class="submenu-toggle" aria-expanded="false">
+          <i class='bx bx-shield'></i><span>Admin</span>
+          <i class='bx bx-chevron-right caret'></i>
+        </button>
+        <ul class="submenu">
+          <li><a href="admin-create-user.html">Create User</a></li>
+          <li><a href="admin-user-list.html">User List</a></li>
+          <li><a href="admin-role-access.html">Role Access</a></li>
+          <li><a href="admin-user-access.html">User Access</a></li>
+        </ul>
+      </li>
+
+      <li class="has-submenu">
+        <button class="submenu-toggle" aria-expanded="false">
+          <i class='bx bx-car'></i><span>Tractor</span>
+          <i class='bx bx-chevron-right caret'></i>
+        </button>
+        <ul class="submenu">
+          <li><a href="tractor-tractor.html">Tractor</a></li>
+          <li><a href="tractor-rent.html">Tractor Rent</a></li>
+          <li><a href="tractor-rent-by-customer.html">Tractor Rent by Customer</a></li>
+        </ul>
+      </li>
+
+      <li><a href="membership.html"><i class='bxr  bx-credit-card-alt'></i><span>Membership</span></a></li>
+    </ul>
+  </aside>
+<main>
+      <div class="form-container">
+
+        <div class="form-header">
+          <a href="master-organisation.html" class="back-btn">
+            <i class='bxr bx-arrow-left-stroke-circle'></i>
+          </a>
+          <h1>Add Organisation</h1>
+        </div>
+        
+        <form action="#" method="post">
+          <div class="form-box">
+        <h2>Organisation Details</h2>
+
+        <!-- Organisation Code & Name -->
+        <div class="form-group row">
+          <div class="col">
+            <label>Organisation Code</label>
+            <input type="text" placeholder="Code">
+          </div>
+          <div class="col">
+            <label>Organisation Name</label>
+            <input type="text" placeholder="Name">
+          </div>
+        </div>
+
+        <!-- Email & Primary Mobile -->
+        <div class="form-group row">
+          <div class="col">
+            <label>Email</label>
+            <input type="email" placeholder="Email">
+          </div>
+          <div class="col">
+            <label>Primary Mobile Number</label>
+            <input type="text" placeholder="Primary Mobile">
+          </div>
+        </div>
+
+        <!-- Alternate Mobile (full width) -->
+        <div class="form-group full-width">
+          <label>Alternate Mobile Number</label>
+          <input type="text" placeholder="Alternate Mobile">
+        </div>
+
+        <!-- Primary & Alternate Address -->
+        <div class="form-group row">
+          <div class="col">
+            <label>Primary Address</label>
+            <input type="text" placeholder="Primary Address">
+          </div>
+          <div class="col">
+            <label>Alternate Address</label>
+            <input type="text" placeholder="Alternate Address">
+          </div>
+        </div>
+
+        <!-- Country & State -->
+        <div class="form-group row">
+          <div class="col">
+            <label>Country</label>
+            <input type="text" placeholder="Country">
+          </div>
+          <div class="col">
+            <label>State</label>
+            <input type="text" placeholder="State">
+          </div>
+        </div>
+
+        <!-- City & Zip Code -->
+        <div class="form-group row">
+          <div class="col">
+            <label>City</label>
+            <input type="text" placeholder="City">
+          </div>
+          <div class="col">
+            <label>Zip Code</label>
+            <input type="text" placeholder="Zip Code">
+          </div>
+        </div>
+
+          <div class="form-group checkbox-group">
+            <label>Active</label>
+            <div class="checkbox-options">
+              <label><input type="radio" name="active" value="yes"> Yes</label>
+              <label><input type="radio" name="active" value="no"> No</label>
+            </div>
+          </div>
+
+        <!-- Form Actions -->
+        <div class="form-actions">
+          <button class="submit-btn">Submit</button>
+          <a href="#" class="cancel-btn">Cancel</a>
+        </div>
+      </div>
+    </div>
+      
+    </form>
+  </div>
+</main>
+
+  <footer>footer</footer>
+  <script src="main.js"></script>
+</body>
+
+</html>
